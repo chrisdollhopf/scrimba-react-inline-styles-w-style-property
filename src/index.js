@@ -14,7 +14,20 @@ function App() {
     timeOfDay = "night";
   }
 
-  return <h1>Good {timeOfDay}!</h1>;
+  return (
+    /* JSX expects insline style not to be a string but a
+    JS object so use: { } but seen as though objects are
+    also wrapped w: { } we need two sets */
+    /* To add additional object use another key value pair
+    separated by: , Also when inside of JS without ' ' encaps
+    we cannot use a dash eg - for an inline style object.
+    Instead we use camel case eg: backgroundColor*/
+    <div>
+      <h1 style={{ color: "#FF8C00", backgroundColor: "#FF2D00" }}>
+        Good {timeOfDay}!
+      </h1>
+    </div>
+  );
 }
 
 ReactDOM.render(<App />, document.getElementById("root"));
