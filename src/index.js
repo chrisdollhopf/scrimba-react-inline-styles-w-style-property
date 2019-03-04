@@ -14,18 +14,24 @@ function App() {
     timeOfDay = "night";
   }
 
+  /* To add additional object use another key value pair
+  separated by: , Also when inside of JS without ' ' encaps
+  we cannot use a dash eg - for an inline style object.
+  Instead we use camel case eg: backgroundColor*/
+
+  const styles = {
+    color: "#FF8C00",
+    backgroundColor: "#FF2D00",
+    fontSize: 24 // if using a measurement use "24px"
+  };
+  /* pseudo selectors such as :hover is not able to be
+    used in inline styles, if it is a must use then it is at
+    this point to be done in CSS using className and in the
+    future style libraries and styled components  */
+
   return (
-    /* JSX expects insline style not to be a string but a
-    JS object so use: { } but seen as though objects are
-    also wrapped w: { } we need two sets */
-    /* To add additional object use another key value pair
-    separated by: , Also when inside of JS without ' ' encaps
-    we cannot use a dash eg - for an inline style object.
-    Instead we use camel case eg: backgroundColor*/
     <div>
-      <h1 style={{ color: "#FF8C00", backgroundColor: "#FF2D00" }}>
-        Good {timeOfDay}!
-      </h1>
+      <h1 style={styles}>Good {timeOfDay}!</h1>
     </div>
   );
 }
