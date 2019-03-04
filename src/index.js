@@ -2,17 +2,12 @@ import React from "react"
 import ReactDOM from "react-dom"
 
 function App() {
-  const firstName = "Johnny"
-  const lastName = "Mnemonic"
+    const date = new Date()
+    const hours = date.getHours()
 
-  return ( // In here is JSX
-    <div>
-    {/* Use JS inside of our JSX with: { } */}
-    <h1>Hello {firstName + " " + lastName}!</h1>
-    {/* ES6 JS string templating syntax ES6 */}
-    <h2>Hello {`${firstName} ${lastName} }`}</h2>
-    </div>
-  )
+    return (
+      <h1>Is is currently about {date.getHours() % 12} o'clock</h1>
+    )
 }
 
 ReactDOM.render(<App />, document.getElementById("root"))
